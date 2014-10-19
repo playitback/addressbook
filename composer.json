@@ -1,0 +1,21 @@
+{
+	"require": {
+		"doctrine/dbal": "2.4.3",
+		"doctrine/orm": "2.4.6",
+		"aura/router": "2.1.0",
+		"cypresslab/less-elephant": "0.2.5",
+		"jms/serializer": "0.16.0"
+	},
+	"require-dev": {
+		"phpunit/phpunit": "4.3.*",
+		"guzzle/guzzle": "3.9.2"
+	},
+	"autoload": {
+		"psr-4": {
+			"Lib\\":  "lib/",
+			"Model\\": "model/",
+			"Controller\\": "controller/",
+			"Test\\": "test/"
+		}
+	}
+}

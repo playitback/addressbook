@@ -1,0 +1,177 @@
+@import 'global';
+
+/* !Bootstrap overrides */
+
+.container-fluid, .row, body, html, section {
+	height: 100%;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+   font-weight: 300;
+	
+	section {
+		ul {
+			li {
+				list-style: none;
+				
+				a {
+					line-height: 30px;
+					display: block;
+					padding: 0 15px;
+					font-size: 14px;
+					cursor: pointer;
+				}
+			}
+		}
+		
+		&#contacts {
+			background: #F0F0F0;
+			padding: 0;
+			
+			ul {
+				li {
+					&:hover, &.current {
+						background: #ffffff;
+						
+						a {
+							color: #838383;
+						}
+					}
+					
+					&.add {
+						padding: 0 10px;
+						margin: 10px 0 0 0;
+						
+						a.btn {
+							display: block;
+							text-align: center;
+						}
+						
+						&:hover {
+							background: inherit;
+						}
+					}
+				}
+			}
+		}
+		
+		&#info {
+			display: none;
+			
+			.head {
+				border-bottom: 1px solid #adadad;
+				padding: 25px 0;
+				
+				.photo {
+					float: left;
+					width: 100px;
+					height: 100px;
+					margin-right: 20px;
+					
+					img {
+						.at2x('/assets/img/default_contact_photo.png', 64px, 71px);
+						
+						background-color: #d3d3d3;
+						background-position: 50% 105%;
+						border-radius: 50px;
+						display: block;
+						width: 100px;
+						height: 100px;
+					}
+				}
+				
+				.text {
+					display: table-cell;
+					height: 100px;
+					vertical-align: middle;
+					
+					.name {
+						font-weight: 600;
+						font-size: 30px;
+					}
+				}
+				
+				div.edit {
+					display: none;
+					
+					input[type=text] {
+						display: inline-block;
+						width: 65px;
+						min-width: 65px;
+						border: none;
+						
+						&:focus {
+							border: 1px solid #d1d1d1;
+						}
+					}
+				}
+			}
+			
+			.attributes {
+				margin-bottom: 50px;
+				
+				.container {
+					padding: 0;
+					
+					.attribute {
+						line-height: 35px;
+						border-bottom: 1px solid #e0e0e0;
+						
+						a.remove {
+							margin-right: 10px;
+							float: left;
+							display: block;
+							margin-top: 12px;
+						}
+						
+						.chosen-container {
+							margin-right: 10px;
+							display: block;
+							float: left;
+							margin-top: 12px;
+						}
+						
+						label {
+							width: 120px;
+							text-align: right;
+							margin-right: 10px;
+						}
+						
+						input {
+							height: 25px;
+							margin-top: 12px;
+							line-height: normal;
+						}
+					}
+				}
+				
+				a.add {
+					line-height: 35px;
+					cursor: pointer;
+					display: none;
+				}
+			}
+			
+			.controls {
+				height: 50px;
+				bottom: 0;
+				right: 30px;
+				position: absolute;
+				left: 0;
+				
+				a.btn {
+					float: right;
+					margin: 0 0 0 15px;
+					
+					&.attr-add {
+						float: none;
+					}
+				}
+			}
+		}
+		
+	}
+}
