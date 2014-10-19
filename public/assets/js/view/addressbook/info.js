@@ -14,7 +14,7 @@ define('view/addressbook/info',
 		
 		setContact: function(contact) {
 			if(contact != this.model) {
-				if(typeof this.model === 'object' && this.model.hasChanged()) {
+				if(typeof this.model === 'object' && this.model.hasChanged() && this.editMode) {
 					if(!confirm('You have pending changes. Are you sure you wish to continue?')) {
 						return;
 					}
