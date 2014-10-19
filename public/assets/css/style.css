@@ -473,6 +473,11 @@ body section ul li a {
 body section#contacts {
   background: #F0F0F0;
   padding: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  overflow: auto;
 }
 body section#contacts ul li:hover,
 body section#contacts ul li.current {
@@ -495,6 +500,13 @@ body section#contacts ul li.add:hover {
 }
 body section#info {
   display: none;
+  position: absolute;
+  left: 25%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+  padding-bottom: 40px;
 }
 body section#info .head {
   border-bottom: 1px solid #adadad;
@@ -543,11 +555,9 @@ body section#info .head div.edit input[type=text] {
 body section#info .head div.edit input[type=text]:focus {
   border: 1px solid #d1d1d1;
 }
-body section#info .attributes {
-  margin-bottom: 50px;
-}
 body section#info .attributes .container {
   padding: 0;
+  width: auto;
 }
 body section#info .attributes .container .attribute {
   line-height: 35px;
@@ -581,11 +591,14 @@ body section#info .attributes a.add {
   display: none;
 }
 body section#info .controls {
-  height: 50px;
+  height: 40px;
   bottom: 0;
-  right: 30px;
-  position: absolute;
-  left: 0;
+  right: 15px;
+  padding-right: 0px;
+  position: fixed;
+  left: 25%;
+  background: #ffffff;
+  padding-top: 8px;
 }
 body section#info .controls a.btn {
   float: right;

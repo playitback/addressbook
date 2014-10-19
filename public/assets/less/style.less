@@ -30,6 +30,11 @@ body {
 		&#contacts {
 			background: #F0F0F0;
 			padding: 0;
+			position: absolute;
+			left: 0;
+			top: 0;
+			bottom: 0;
+			overflow: auto;
 			
 			ul {
 				li {
@@ -60,6 +65,14 @@ body {
 		
 		&#info {
 			display: none;
+			position: absolute;
+			left: 25%;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			overflow: auto;
+			padding-bottom: 40px;
+			
 			
 			.head {
 				border-bottom: 1px solid #adadad;
@@ -111,10 +124,10 @@ body {
 			}
 			
 			.attributes {
-				margin-bottom: 50px;
 				
 				.container {
 					padding: 0;
+					width: auto;
 					
 					.attribute {
 						line-height: 35px;
@@ -156,11 +169,14 @@ body {
 			}
 			
 			.controls {
-				height: 50px;
+				height: 40px;
 				bottom: 0;
-				right: 30px;
-				position: absolute;
-				left: 0;
+				right: 15px;
+				padding-right: 0px;
+				position: fixed;
+				left: 25%;
+				background: #ffffff;
+				padding-top: 8px;
 				
 				a.btn {
 					float: right;
