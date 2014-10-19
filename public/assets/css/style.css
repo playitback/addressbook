@@ -573,6 +573,9 @@ body section#info .attributes .container .attribute a.remove {
   display: block;
   margin: 8px 10px 8px;
 }
+body section#info .attributes .container .attribute select {
+  width: 90px;
+}
 body section#info .attributes .container .attribute .chosen-container {
   margin-right: 10px;
   display: block;
