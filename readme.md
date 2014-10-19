@@ -14,10 +14,17 @@ This project is a basic address book. It allows you to add/edit and delete conta
 1. Configure the database details in `config.php`
 2. Ensure the database already exists and the user has full permissions
 3. Alternatively, if the user can not create tables, import the structure from `data/structure.sql`
+
+
+#### 4. Configure host
+
+1. The host needs to be absolute because the api endpoints are absolute. My local env is http://addressbook.dev.
+2. The document root is the `public` directory and the index file is `index.php`
  
 
+
 #### 4. Configure and run tests
-***N.B.*** All data will be cleared prior to running the tests.
+***N.B. All data will be cleared prior to running the tests.***
 
 1. From the command line run to install dev dependencies `php composer.phar update —dev`
 2. The tests are configured to use the host http://addressbook.dev to perform REST tests. This can be configured in `test/BaseTest.php`. Configured incorrectly and the tests will fail.
