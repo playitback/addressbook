@@ -517,6 +517,7 @@ body section#info .head .photo {
   width: 100px;
   height: 100px;
   margin-right: 20px;
+  display: none;
 }
 body section#info .head .photo img {
   background-image: url('/assets/img/default_contact_photo.png');
@@ -536,7 +537,8 @@ body section#info .head .photo img {
 }
 body section#info .head .text {
   display: table-cell;
-  height: 100px;
+  height: 50px;
+  padding-left: 15px;
   vertical-align: middle;
 }
 body section#info .head .text .name {
@@ -546,13 +548,15 @@ body section#info .head .text .name {
 body section#info .head div.edit {
   display: none;
 }
-body section#info .head div.edit input[type=text] {
+body section#info .head div.edit input[type=text],
+body section#info .head div.edit textarea {
   display: inline-block;
   width: 65px;
   min-width: 65px;
   border: none;
 }
-body section#info .head div.edit input[type=text]:focus {
+body section#info .head div.edit input[type=text]:focus,
+body section#info .head div.edit textarea:focus {
   border: 1px solid #d1d1d1;
 }
 body section#info .attributes .container {
@@ -576,15 +580,19 @@ body section#info .attributes .container .attribute .chosen-container {
   margin: 8px 10px 8px;
 }
 body section#info .attributes .container .attribute label {
-  width: 120px;
+  width: 80px;
   text-align: right;
   margin: 0 10px 0 0;
 }
-body section#info .attributes .container .attribute input {
+body section#info .attributes .container .attribute input,
+body section#info .attributes .container .attribute textarea {
   height: 25px;
   margin-top: 8px;
   line-height: normal;
   margin: 8px 0;
+}
+body section#info .attributes .container .attribute textarea {
+  height: 60px;
 }
 body section#info .attributes a.add {
   line-height: 35px;

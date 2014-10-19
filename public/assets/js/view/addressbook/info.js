@@ -5,6 +5,7 @@ define('view/addressbook/info',
 	return Backbone.View.extend({
 		
 		editMode: false,
+		attributeChanged: false,
 		
 		initialize: function(options) {
 			this.addressBook = options && options.addressBook || null;
@@ -119,7 +120,7 @@ define('view/addressbook/info',
 			controls.find('a.edit').off('click').on('click', function() {
 				if(self.editMode) {
 					// Only save, if changes have been made
-					if(self.model.hasChanged()) {
+					if(self.model.hasChanged() || self.attributeChanged) {
 						if(self.model.isValid()) {
 							self.model.save();
 						}
@@ -183,6 +184,7 @@ define('view/addressbook/info',
 			
 			attributeCollection.on('add', this.handleAttributeAdd, this);
 			attributeCollection.on('remove', this.handleAttributeRemove, this);
+			attributeCollection.on('change', this.handleAttributeChange, this);
 		},
 		
 		unbindEvents: function() {
@@ -212,6 +214,8 @@ define('view/addressbook/info',
 				editable: this.editMode });
 			
 			attribute.attributeView.render();
+			
+			this.attributeChanged = true;
 		},
 		
 		handleAttributeRemove: function(attribute) {			
@@ -219,6 +223,12 @@ define('view/addressbook/info',
 				attribute.attributeView.unbindEvents();
 				attribute.attributeView.remove();
 			}
+			
+			this.attributeChanged = true;
+		},
+		
+		handleAttributeChange: function() {
+			this.attributeChanged = true;
 		}
 		
 	});

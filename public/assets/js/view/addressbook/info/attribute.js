@@ -79,6 +79,8 @@ define('view/addressbook/info/attribute',
 			if(this.editable) {
 				this.$el.find('select').on('change', function() {
 					self.model.set('label', $(this).val());
+					
+					self.updateField();
 				});
 				
 				this.$el.find('input, textarea').on('keyup', function() {
@@ -97,15 +99,31 @@ define('view/addressbook/info/attribute',
 			this.$el.find('a.btn.remove').off('click');
 		},
 		
+		updateField: function() {			
+			var currentField = this.$el.find('input, textarea'),
+				type = this.typeForLabel(),
+				field;
+								
+			if(type == 'textarea') {
+				field = $('<textarea></textarea>', { val: this.model.get('value') });
+			}
+			else {
+				field = $('<input />', { type: type , val: this.model.get('value') });
+			}
+						
+			currentField.before(field);
+			currentField.remove();
+		},
+		
 		/**
 		 * Returns an input type based on the key of the current attribute
 		 */
 		typeForLabel: function() {
 			var type = 'text';
 			
-			if(this.model.has('key')) {
-				var key = this.model.get('key').toLowerCase();
-				
+			if(this.model.has('label')) {
+				var key = this.model.get('label').toLowerCase();
+								
 				if(key === 'email') {
 					type = 'email';
 				}
