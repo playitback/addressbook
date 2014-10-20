@@ -60,7 +60,7 @@ class Router extends AuraRouter {
 	public function dispatch()
 	{
 		$path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-				
+
 		$route 	= $this->match($path, $_SERVER);
 		
 		if($route)
@@ -68,7 +68,7 @@ class Router extends AuraRouter {
 			if(isset($route->values['controller']))
 			{
 				$controllerClass = 'Controller\\' . $route->values['controller'];
-								
+
 				if(class_exists($controllerClass))
 				{
 					$controllerInstance = new $controllerClass;
