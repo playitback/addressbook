@@ -29,8 +29,17 @@ define('view/addressbook',
 					self.hideInfoView();
 				}
 				else {
+					var currentEditMode = self.infoView.editMode;
+					
 					self.infoView.editMode = editMode; // Set directly, so the view's only rendered once
-					self.infoView.setContact(contact);
+					
+					if(self.infoView.setContact(contact)) {
+						// Revert edit mode
+						self.infoView.editMode = currentEditMode;
+						// Set selected contact to previously selected
+						this.contactsView.handleAddContactClick(self.infoView.model);
+					}
+					
 				}
 			});
 		},
