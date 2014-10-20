@@ -11,6 +11,12 @@
 		"guzzle/guzzle": "3.9.2"
 	},
 	"autoload": {
+		"psr-0": {
+                        "Lib\\":  "lib/",
+                        "Model\\": "model/",
+                        "Controller\\": "controller/",
+                        "Test\\": "test/"
+                },
 		"psr-4": {
 			"Lib\\":  "lib/",
 			"Model\\": "model/",

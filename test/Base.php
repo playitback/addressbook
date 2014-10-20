@@ -28,7 +28,7 @@ class Base extends \PHPUnit_Framework_TestCase {
 	protected function httpClient()
 	{
 		if(!$this->client) {
-			$this->client = new Client('http://addressbook.dev', array(
+			$this->client = new Client('http://addressbook.nickbabenko.com', array(
 				'request.options' => array(
 				    'exceptions' => false,
 				)
