@@ -113,6 +113,8 @@ define('view/addressbook/info/attribute',
 						
 			currentField.before(field);
 			currentField.remove();
+			
+			this.createEvents();
 		},
 		
 		/**
