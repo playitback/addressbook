@@ -54,7 +54,7 @@ define('view/addressbook/info/attribute',
 				);
 				
 				this.$el.append(
-					$('<span></span>', { html: this.model.get('value').replace(/\n/g, '<br />') })
+					$('<span></span>', { 'class': 'value', html: this.model.get('value').replace(/\n/g, '<br />') })
 				);
 			}
 			
