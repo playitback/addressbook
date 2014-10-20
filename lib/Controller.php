@@ -66,10 +66,16 @@ class Controller {
 	
 	protected function loadView($name)
 	{
+		$response = new Response();
+		
+		$response->addHeader('Content-Type', 'text/html');
+		
 		$viewPath = '../view/' . $name . '.php';
 		
 		if(file_exists($viewPath))
-			return include($viewPath);
+			$response->setBody(include($viewPath));
+		
+		return $response;
 	}
 	
 }
