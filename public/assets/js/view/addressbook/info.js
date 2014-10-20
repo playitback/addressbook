@@ -132,6 +132,8 @@ define('view/addressbook/info',
 						}
 						else {
 							alert('Contacts require at least a first name');
+							
+							return;
 						}
 					}
 					// If there's no changes and it's a new contact, just remove it
