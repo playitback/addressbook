@@ -54,9 +54,11 @@ define('view/addressbook/info/attribute',
 				);
 				
 				this.$el.append(
-					$('<span></span>', { text: this.model.get('value') })
+					$('<span></span>', { html: this.model.get('value').replace(/\n/g, '<br />') })
 				);
 			}
+			
+			this.$el.addClass(this.model.get('label'));
 			
 			$('section#info .attributes .container').append(this.$el);
 			
@@ -73,7 +75,7 @@ define('view/addressbook/info/attribute',
 		
 		createEvents: function() {
 			this.unbindEvents();
-			
+						
 			var self = this;
 			
 			if(this.editable) {
@@ -82,7 +84,7 @@ define('view/addressbook/info/attribute',
 					
 					self.updateField();
 				});
-				
+								
 				this.$el.find('input, textarea').on('keyup', function() {
 					self.model.set('value', $(this).val());
 				});

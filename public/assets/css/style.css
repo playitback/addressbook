@@ -586,6 +586,11 @@ body section#info .attributes .container .attribute label {
   width: 80px;
   text-align: right;
   margin: 0 10px 0 0;
+  position: absolute;
+}
+body section#info .attributes .container .attribute span {
+  margin-left: 90px;
+  display: block;
 }
 body section#info .attributes .container .attribute input,
 body section#info .attributes .container .attribute textarea {
@@ -596,6 +601,10 @@ body section#info .attributes .container .attribute textarea {
 }
 body section#info .attributes .container .attribute textarea {
   height: 60px;
+}
+body section#info .attributes .container .attribute.address span {
+  line-height: normal;
+  padding: 10px 0;
 }
 body section#info .attributes a.add {
   line-height: 35px;
