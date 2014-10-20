@@ -3,11 +3,21 @@ namespace Test;
 
 class ContactsTest extends Base {
 	
+	/**
+	 * Construct
+	 * 
+	 * @return void
+	 */
 	public function __construct()
 	{
 		$this->deleteAllContacts();
 	}
 	
+	/**
+	 * Tests the create contact request
+	 * 
+	 * @return void
+	 */
 	public function testCreate()
 	{
 		$originalData = array(
@@ -29,6 +39,11 @@ class ContactsTest extends Base {
 		$this->assertModifyResponse($response, $originalData);
 	}
 	
+	/**
+	 * Tests the GET contacts request
+	 *
+	 * @return void
+	 */
 	public function testGet()
 	{
 		$request = $this->httpClient()
@@ -52,6 +67,11 @@ class ContactsTest extends Base {
 		$this->assertNotEmpty($contacts);
 	}
 	
+	/**
+	 * Tests the contact update method
+	 *
+	 * @return void
+	 */
 	public function testUpdate()
 	{
 		$contact = $this->entityManager()->getRepository('Model\Contact')
@@ -80,6 +100,11 @@ class ContactsTest extends Base {
 
 	}
 	
+	/**
+	 * Tests the contact delete method
+	 *
+	 * @return void
+	 */
 	public function testDelete()
 	{
 		$contact = $this->entityManager()->getRepository('Model\Contact')
@@ -99,6 +124,11 @@ class ContactsTest extends Base {
 		$this->assertNull($contact);
 	}
 	
+	/**
+	 * Helper method for clearing all current contacts in the db, so the tests can run successfully
+	 *
+	 * @return void
+	 */
 	private function deleteAllContacts()
 	{
 		$contacts = $this->entityManager()->getRepository('Model\Contact')
@@ -111,6 +141,12 @@ class ContactsTest extends Base {
 		$this->entityManager()->clear();
 	}
 	
+	/**
+	 * Helper method for the create/update tests to check the response against the data sent
+	 * and the data in the database
+	 *
+	 * @return void
+	 */
 	private function assertModifyResponse($response, $originalData)
 	{
 		// Ensure the data store is up to date

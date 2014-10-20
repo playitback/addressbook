@@ -6,8 +6,14 @@ use Doctrine\ORM\EntityManager;
 
 class Database {
 	
+	/** @var Doctrine\ORM\EntityManager */
 	public static $entityManager;
 	
+	/**
+	 * Configures the entityManager instance
+	 *
+	 * @return void
+	 */
 	public static function configure()
 	{
 		$databaseParams = include(__DIR__ . '/../config.php');

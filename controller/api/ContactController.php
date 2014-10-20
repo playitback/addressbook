@@ -18,6 +18,8 @@ class ContactController extends \Lib\Controller {
 	
 	/**
 	 * Creates a new contact using the request body
+	 *
+	 * @return Lib\Response
 	 */
 	public function postIndex()
 	{
@@ -93,8 +95,9 @@ class ContactController extends \Lib\Controller {
 	}
 	
 	/**
+	 * Deletes a contact with a given ID
 	 * 
-	 * 
+	 * @param	integer $id	The unique ID of the contact
 	 * @return	Lib\Response
 	 */
 	public function deleteIndex($id)
