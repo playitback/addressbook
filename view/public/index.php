@@ -10,7 +10,7 @@
 	<body>
 		<div class="container-fluid">
 			<div class="row">
-				<section id="contacts" class="col-md-3 col-sm-3 hidden-xs">
+				<section id="contacts" class="col-md-3 col-sm-3">
 					<ul></ul>
 				</section>
 				<section id="info" class="col-md-9 col-sm-9">
