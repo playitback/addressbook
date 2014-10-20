@@ -119,6 +119,12 @@ define('view/addressbook/info',
 			
 			controls.find('a.edit').off('click').on('click', function() {
 				if(self.editMode) {
+					self.model.get('attributes').forEach(function(attribute) {
+						if(!attribute.has('value') || $.trim(attribute.get('value')).length == 0) {
+							attribute.collection.remove(attribute);
+						}
+					});
+					
 					// Only save, if changes have been made
 					if(self.model.hasChanged() || self.attributeChanged) {
 						if(self.model.isValid()) {
