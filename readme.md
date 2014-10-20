@@ -21,7 +21,7 @@ This project is a basic address book. It allows you to add/edit and delete conta
 
 1. The host needs to be absolute because the api endpoints are absolute. My local env is http://addressbook.dev.
 2. The document root is the `public` directory and the index file is `index.php`
-3. Make sure `assets/css` is writable
+3. Make sure `public/assets/css` is writable
  
 
 
